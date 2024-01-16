@@ -1,0 +1,29 @@
+@use 'sass:math';
+@use 'sass:color';
+
+//------------------------------------------------//
+//-------------------  COLORES -------------------//
+// -----------------------------------------------//
+
+$primary: rgb(186, 186, 186);
+$primary-dark: color.scale($primary, $lightness: -20%);
+$primary-light: color.scale($primary, $lightness: +20%);
+$secondary: rgb(43, 43, 43);
+$success: rgb(106, 255, 106);
+$warning: yellow;
+$error: red;
+$info: blue;
+$card: orange;
+
+$colores: ("primary": $primary, "secondary": $secondary, "success": $success, "warning": $warning, "error": $error, "info": $info, "card": $card);
+
+$margin: 1rem;
+$padding: 1rem;
+
+$border-radius:25px;
+$border-thickness:3px;
+
+$font-size: 1rem;
+$font-size-small: $font-size * 0.8;
+$font-size-large: $font-size * 1.2;
+

@@ -1,0 +1,120 @@
+@use "sass:color";
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    padding: {
+        top: 3rem;
+        left:10rem;
+        right: 10rem;
+        bottom: 3rem;
+    }
+}
+
+.success {
+    padding: $padding;
+    background-color: $secondary;
+    color: $success;
+    @include border($success);
+    margin: $margin;
+    padding: $padding;
+}
+
+.error {
+    padding: $padding;
+    background-color: $secondary;
+    color: $error;
+    @include border($error);
+    font-size: $font-size-large;
+    margin: $margin;
+    padding: $padding;
+}
+
+.info {
+    padding: $padding;
+    background-color: $secondary;
+    color: $primary;
+    @include border($info);
+    font-size: $font-size-small;
+    margin: $margin;
+    padding: $padding;
+}
+
+.warning {
+    padding: $padding;
+    background-color: $secondary;
+    color: $warning;
+    @include border($warning);
+    margin: $margin;
+    padding: $padding;
+}
+
+.card {
+    @include border($card);
+    color: $card;
+    padding: $padding;
+    margin: $margin;
+    background-color: $secondary;
+    .card-title {
+        font-weight:bold;
+        margin-bottom:$margin;
+    }
+
+    .card-body {
+        a {
+            &:hover {
+            text-decoration: underline;
+            }
+            :not(&) {
+            text-decoration: none;
+            }
+        }
+    }
+}
+
+
+.icon-40px {
+    height: 40px;
+    width: 40px;
+}
+
+.icon-80px {
+    height: 80px;
+    width: 80px;
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: $border-radius;
+    background-color: blueviolet;
+    color: texto-color(background-color);
+    @include padding;
+    @include hover {
+        color: texto-color(background-color);
+        background-color: color.scale(blueviolet, $lightness: 20%);
+    }
+}
+
+@each $color, $value in $colores {
+    .btn-#{$color} {
+        @include padding;
+        background-color: $value;
+        color: texto-color(background-color);
+        @include hover {
+            background-color: color.scale($value, $lightness: 20%);
+            color: texto-color(background-color);
+        }
+        @include border($value);
+    }
+
+    .btn-#{$color}-outlined {
+        @include padding;
+        background-color: white;
+        @include border($value); 
+    }
+}
+
+
+

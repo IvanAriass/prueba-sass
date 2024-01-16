@@ -1,0 +1,7 @@
+@function color-texto($color) {
+    @if (color.lightness($color) > 50%) {
+        @return black;
+    } @else {
+        @return white;
+    }
+}
